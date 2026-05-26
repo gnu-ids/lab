@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | IDS Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#ffffff; --bg2:#f8fafc; --bg3:#f1f5f9;
+      --surface:#ffffff; --surface2:#f1f5f9;
+      --border:#e2e8f0; --border2:#cbd5e1;
+      --accent:#2563eb; --accent2:#1d4ed8;
+      --accent-soft:rgba(37,99,235,0.08); --accent-glow:rgba(37,99,235,0.2);
+      --gold:#b45309; --gold-soft:rgba(180,83,9,0.08);
+      --text:#0f172a; --text2:#475569; --text3:#94a3b8;
+      --green:#15803d; --green-soft:rgba(21,128,61,0.08);
+      --font-display:'Pretendard','DM Sans','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+      --font-body:'Pretendard','DM Sans','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+      --font-mono:'JetBrains Mono',monospace;
+      --radius:8px; --radius-lg:16px;
+      --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word;}
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    h1,h2,h3,.page-title,.section-title,.area-title{font-family:var(--font-display);font-weight:700;letter-spacing:0;}
+    .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+    .tag{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:0.7rem;font-weight:500;padding:0.2em 0.65em;border-radius:4px;letter-spacing:0.04em;}
+    .tag-blue{background:var(--accent-soft);color:var(--accent2);border:1px solid rgba(59,130,246,0.25);}
+    .tag-gold{background:var(--gold-soft);color:var(--gold);border:1px solid rgba(240,180,41,0.25);}
+    .tag-green{background:var(--green-soft);color:var(--green);border:1px solid rgba(34,197,94,0.25);}
+    ::-webkit-scrollbar{width:6px;}
+    ::-webkit-scrollbar-track{background:var(--bg2);}
+    ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.06);height:60px;display:flex;align-items:center;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;width:100%;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{display:flex;align-items:center;}
+    .nav-logo-img{height:46px;width:auto;mix-blend-mode:multiply;filter:contrast(1.1);transition:opacity var(--transition);}
+    .nav-logo:hover .nav-logo-img{opacity:0.75;}
+    .nav-links{display:flex;align-items:center;gap:1.55rem;list-style:none;}
+    .nav-links a{font-size:0.85rem;color:var(--text2);transition:color var(--transition);}
+    .nav-links a:hover{color:var(--text);}
+    .nav-links a.active{color:var(--accent);}
+    .lang-toggle{font-family:var(--font-mono);font-size:0.75rem;background:var(--surface);border:1px solid var(--border2);color:var(--text2);padding:0.3em 0.8em;border-radius:20px;cursor:pointer;transition:all var(--transition);margin-left:1rem;}
+    .lang-toggle:hover{background:var(--surface2);color:var(--text);}
+
+    /* PAGE HERO */
+    .page-hero{padding:7rem 0 4rem;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(37,99,235,0.06) 0%,transparent 70%);pointer-events:none;}
+    .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.5;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 80%);}
+    .page-hero-content{position:relative;z-index:1;}
+    .page-eyebrow{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;}
+    .page-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--accent);}
+    .page-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--text);margin-bottom:0.75rem;}
+    .page-desc{font-size:1rem;color:var(--text2);max-width:620px;line-height:1.8;}
+
+    /* SECTION */
+    .section{padding:5rem 0;}
+    .section-eyebrow{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;}
+    .section-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--accent);}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.5rem,2.5vw,2rem);color:var(--text);margin-bottom:0.5rem;}
+    .section-sub{font-size:0.9rem;color:var(--text2);margin-bottom:2.5rem;line-height:1.7;}
+
+    /* RESEARCH AREA CARD */
+    .area-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;padding:3rem 0;border-bottom:1px solid var(--border);}
+    .area-block:last-child{border-bottom:none;}
+    .area-block.reverse{direction:rtl;}
+    .area-block.reverse>*{direction:ltr;}
+    .area-num{font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);margin-bottom:0.5rem;}
+    .area-title{font-family:var(--font-display);font-size:1.6rem;color:var(--text);margin-bottom:0.3rem;}
+    .area-sub{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent);margin-bottom:1.25rem;}
+    .area-body{font-size:0.9rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem;}
+    .area-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+    .area-vis{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;gap:1rem;box-shadow:0 14px 34px rgba(15,23,42,0.04);}
+    .topic-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color var(--transition),box-shadow var(--transition);}
+    .topic-item:hover{border-color:var(--accent);box-shadow:0 4px 16px var(--accent-soft);}
+    .topic-icon{font-size:1.3rem;flex-shrink:0;margin-top:0.1rem;}
+    .topic-name{font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;}
+    .topic-desc{font-size:0.8rem;color:var(--text2);line-height:1.5;}
+
+    /* BUTTONS */
+    .btn-primary{background:var(--accent);color:#fff;font-size:0.875rem;font-weight:500;padding:0.7rem 1.5rem;border-radius:var(--radius);transition:all var(--transition);border:none;cursor:pointer;display:inline-block;}
+    .btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);}
+    .btn-outline{background:transparent;color:var(--text2);font-size:0.875rem;font-weight:500;padding:0.7rem 1.5rem;border-radius:var(--radius);border:1px solid var(--border2);transition:all var(--transition);cursor:pointer;display:inline-block;}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+
+    /* FOOTER */
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 0 2rem;}
+    .footer-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
+    .footer-tagline{font-size:0.8rem;color:var(--text2);line-height:1.6;}
+    .footer-heading{font-size:0.75rem;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;}
+    .footer-info{font-size:0.8rem;color:var(--text2);line-height:1.8;}
+    .footer-info a{color:var(--accent);transition:opacity var(--transition);}
+    .footer-info a:hover{opacity:0.7;}
+    .footer-bottom{max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text3);display:flex;justify-content:space-between;align-items:center;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+    .page-eyebrow{animation:fadeUp 0.5s ease both 0.1s;}
+    .page-title{animation:fadeUp 0.5s ease both 0.2s;}
+    .page-desc{animation:fadeUp 0.5s ease both 0.3s;}
+
+    @media(max-width:900px){
+      .area-block{grid-template-columns:1fr;}
+      .area-block.reverse{direction:ltr;}
+      .footer-inner{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-inner{grid-template-columns:1fr;}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="DS 로고 (상단용_로고축소).png" alt="IDS Lab" class="nav-logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="publication.html">Publication</a></li>
+      <li><a href="join.html">Contact</a></li>
+    </ul>
+    <button class="lang-toggle">KOR / ENG</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="container page-hero-content">
+    <p class="page-eyebrow">Research Areas</p>
+    <h1 class="page-title">연구 분야</h1>
+    <p class="page-desc">불완전하고 불규칙한 산업 데이터를 신뢰할 수 있는 AI 모델로 변환하는 세 가지 핵심 연구를 수행합니다.</p>
+  </div>
+</div>
+
+<!-- AREA 1: DATA QUALITY -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="area-block">
+      <div>
+        <p class="area-num">01 / Research Area</p>
+        <h2 class="area-title">데이터 품질</h2>
+        <p class="area-sub">Data Quality — Missing · Irregular Sampling</p>
+        <p class="area-body">
+          실제 산업 환경의 센서 데이터는 네트워크 오류, 장비 점검, 센서 고장 등 다양한 이유로 결측이 발생하거나 비균일한 시간 간격으로 수집됩니다.
+          본 연구팀은 이러한 <strong>불완전한 시계열 데이터</strong>를 머신러닝/딥러닝으로 효과적으로 처리하는 방법론을 연구합니다.
+          단순 보간을 넘어, 데이터의 시간적 구조와 산업적 특성을 반영한 imputation 기법 및 불규칙 샘플링에 강건한 모델 설계를 목표로 합니다.
+        </p>
+        <div class="area-tags" style="margin-bottom:1.5rem;">
+          <span class="tag tag-blue">Missing Data Imputation</span>
+          <span class="tag tag-blue">Irregular Time Series</span>
+          <span class="tag tag-blue">Multivariate TS</span>
+          <span class="tag tag-blue">Self-supervised Learning</span>
+        </div>
+      </div>
+      <div class="area-vis">
+        <div class="topic-item">
+          <span class="topic-icon">📉</span>
+          <div>
+            <p class="topic-name">Missing Data Imputation</p>
+            <p class="topic-desc">결측값이 포함된 다변량 시계열에서 패턴을 학습하여 누락된 구간을 정확하게 복원하는 생성 모델 및 마스킹 기반 학습 기법</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">⏱️</span>
+          <div>
+            <p class="topic-name">Irregular Sampling</p>
+            <p class="topic-desc">의료·산업 센서에서 흔히 발생하는 비균일 시간 간격 데이터를 처리하는 ODE 기반, Transformer 기반 모델 연구</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">🔗</span>
+          <div>
+            <p class="topic-name">Robust Representation Learning</p>
+            <p class="topic-desc">데이터 품질 저하 환경에서도 견고한 특징 표현을 학습하는 자기지도(Self-supervised) 및 대조 학습(Contrastive Learning) 접근</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA 2: LABEL QUALITY -->
+<section class="section" style="background:var(--bg2);">
+  <div class="container">
+    <div class="area-block reverse">
+      <div>
+        <p class="area-num">02 / Research Area</p>
+        <h2 class="area-title">레이블 품질</h2>
+        <p class="area-sub">Label Quality — Sparsity · Noisy Labels</p>
+        <p class="area-body">
+          산업 현장에서 전문가가 직접 레이블을 부착하는 작업은 비용과 시간이 막대하게 소요됩니다. 결과적으로 레이블이 희소하거나 오염된(noisy) 상황이 매우 빈번합니다.
+          본 연구팀은 <strong>레이블 희소성</strong> 환경(Semi-supervised Learning)과 <strong>노이즈 레이블</strong> 환경(Learning with Noisy Labels)에서도 강건하게 학습하는 방법론을 연구합니다.
+        </p>
+        <div class="area-tags" style="margin-bottom:1.5rem;">
+          <span class="tag tag-gold">Noisy Label Learning</span>
+          <span class="tag tag-gold">Semi-supervised Learning</span>
+          <span class="tag tag-gold">Label Scarcity</span>
+          <span class="tag tag-gold">Active Learning</span>
+        </div>
+      </div>
+      <div class="area-vis">
+        <div class="topic-item">
+          <span class="topic-icon">🏷️</span>
+          <div>
+            <p class="topic-name">Learning with Noisy Labels</p>
+            <p class="topic-desc">레이블 오류가 섞인 학습 데이터에서 클린 샘플을 선별하고, 노이즈에 강건한 손실함수 및 정규화 기법 설계</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">🌱</span>
+          <div>
+            <p class="topic-name">Semi-supervised Learning</p>
+            <p class="topic-desc">소수의 레이블 데이터와 다량의 비레이블 데이터를 함께 활용하는 의사 레이블링(Pseudo-labeling), Consistency Regularization 기법</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">🎯</span>
+          <div>
+            <p class="topic-name">Active Learning</p>
+            <p class="topic-desc">레이블링 비용 최소화를 위해 정보량이 높은 샘플을 선택적으로 레이블링하는 능동 학습 전략 연구</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA 3: PHM -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="area-block">
+      <div>
+        <p class="area-num">03 / Research Area</p>
+        <h2 class="area-title">산업응용 — PHM</h2>
+        <p class="area-sub">Prognostics &amp; Health Management</p>
+        <p class="area-body">
+          위 두 가지 핵심 연구를 실제 산업 환경에 적용하는 응용 연구입니다.
+          회전 기계, 공작기계, 배터리, 항공엔진 등 다양한 산업 설비를 대상으로
+          <strong>결함 진단(Fault Diagnosis)</strong>, <strong>잔여 수명 예측(RUL Estimation)</strong>, <strong>이상 탐지(Anomaly Detection)</strong> 문제를 다룹니다.
+          현실의 불완전한 데이터와 희소한 레이블 조건 하에서 실용적인 PHM 솔루션을 제안하는 것이 목표입니다.
+        </p>
+        <div class="area-tags" style="margin-bottom:1.5rem;">
+          <span class="tag tag-green">Fault Diagnosis</span>
+          <span class="tag tag-green">RUL Estimation</span>
+          <span class="tag tag-green">Anomaly Detection</span>
+          <span class="tag tag-green">Bearing / Gearbox</span>
+          <span class="tag tag-green">Battery SoH</span>
+        </div>
+      </div>
+      <div class="area-vis">
+        <div class="topic-item">
+          <span class="topic-icon">⚙️</span>
+          <div>
+            <p class="topic-name">Fault Diagnosis</p>
+            <p class="topic-desc">진동·음향·전류 신호 기반 베어링, 기어박스 결함 유형 분류 — 노이즈 레이블 및 도메인 시프트 환경 대응</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">📈</span>
+          <div>
+            <p class="topic-name">Remaining Useful Life (RUL)</p>
+            <p class="topic-desc">센서 데이터 결측·불규칙 샘플링 조건에서의 설비 잔여 수명 예측 딥러닝 모델 (LSTM, Transformer, Neural ODE)</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-icon">🔍</span>
+          <div>
+            <p class="topic-name">Anomaly Detection</p>
+            <p class="topic-desc">정상 데이터만 활용하는 비지도/자기지도 학습 기반 산업 이상 탐지 — 불균형 데이터 및 레이블 희소 환경 적용</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="margin-bottom:0.9rem;">
+        <img src="DS 로고 (하단용_배경제거_크롭).png" alt="IDS Lab" style="height:74px;width:auto;mix-blend-mode:multiply;filter:contrast(1.05);" />
+      </div>
+      <p class="footer-tagline">Industrial Data Science Laboratory<br>산업데이터과학 연구실<br>데이터와 레이블 품질 문제를 해결하는 연구를 수행합니다.</p>
+    </div>
+    <div>
+      <p class="footer-heading">Location</p>
+      <p class="footer-info">경상국립대학교 산업시스템공학부<br>경남 진주시 진주대로 501<br>401동 401호</p>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <p class="footer-info">
+        T : 055-772-1691<br>
+        E : <a href="mailto:sangholee@gnu.ac.kr">sangholee@gnu.ac.kr</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Industrial Data Science Lab. All rights reserved.</span>
+    <span style="font-family:var(--font-mono);color:var(--text3);">Industrial Data Science Lab.</span>
+  </div>
+</footer>
+<script src="lang.js"></script>
+</body>
+</html>
