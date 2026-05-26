@@ -144,7 +144,7 @@
   <div class="container page-hero-content">
     <p class="page-eyebrow">Research Areas</p>
     <h1 class="page-title">연구 분야</h1>
-    <p class="page-desc">불완전하고 불규칙한 산업 데이터를 신뢰할 수 있는 AI 모델로 변환하는 세 가지 핵심 연구를 수행합니다.</p>
+    <p class="page-desc">불완전한 산업 데이터를 기반으로 실용적인 ML/DL 연구를 수행합니다.</p>
   </div>
 </div>
 
@@ -155,39 +155,37 @@
       <div>
         <p class="area-num">01 / Research Area</p>
         <h2 class="area-title">데이터 품질</h2>
-        <p class="area-sub">Data Quality — Missing · Irregular Sampling</p>
+        <p class="area-sub">Data Quality</p>
         <p class="area-body">
-          실제 산업 환경의 센서 데이터는 네트워크 오류, 장비 점검, 센서 고장 등 다양한 이유로 결측이 발생하거나 비균일한 시간 간격으로 수집됩니다.
-          본 연구팀은 이러한 <strong>불완전한 시계열 데이터</strong>를 머신러닝/딥러닝으로 효과적으로 처리하는 방법론을 연구합니다.
-          단순 보간을 넘어, 데이터의 시간적 구조와 산업적 특성을 반영한 imputation 기법 및 불규칙 샘플링에 강건한 모델 설계를 목표로 합니다.
+          실제 산업 환경의 다변량 센서 데이터는 네트워크 오류, 장비 점검, 센서 고장 등 다양한 이유로 결측이 발생하거나 비균일한 시간 간격으로 수집됩니다.
+          본 연구팀은 이러한 <strong>불완전한 산업 데이터</strong>를 효과적으로 처리할 수 있는 ML/DL 방법론을 연구합니다.
         </p>
         <div class="area-tags" style="margin-bottom:1.5rem;">
-          <span class="tag tag-blue">Missing Data Imputation</span>
-          <span class="tag tag-blue">Irregular Time Series</span>
-          <span class="tag tag-blue">Multivariate TS</span>
-          <span class="tag tag-blue">Self-supervised Learning</span>
+          <span class="tag tag-blue">Missing Data</span>
+          <span class="tag tag-blue">Irregular Sampling</span>
+          <span class="tag tag-blue">Multivariate Dependency</span>
         </div>
       </div>
       <div class="area-vis">
         <div class="topic-item">
           <span class="topic-icon">📉</span>
           <div>
-            <p class="topic-name">Missing Data Imputation</p>
-            <p class="topic-desc">결측값이 포함된 다변량 시계열에서 패턴을 학습하여 누락된 구간을 정확하게 복원하는 생성 모델 및 마스킹 기반 학습 기법</p>
+            <p class="topic-name">Missing Data</p>
+            <p class="topic-desc">결측값이 포함된 데이터에서 패턴을 학습하여 누락된 시점/구간을 복원하고, 해당 데이터를 안정적으로 활용하기 위한 방법론 연구</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-icon">⏱️</span>
           <div>
             <p class="topic-name">Irregular Sampling</p>
-            <p class="topic-desc">의료·산업 센서에서 흔히 발생하는 비균일 시간 간격 데이터를 처리하는 ODE 기반, Transformer 기반 모델 연구</p>
+            <p class="topic-desc">의료·산업 데이터에서 흔히 발생하는 비균일 시간 간격 데이터를 효과적으로 처리하기 위한 방법론 연구</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-icon">🔗</span>
           <div>
-            <p class="topic-name">Robust Representation Learning</p>
-            <p class="topic-desc">데이터 품질 저하 환경에서도 견고한 특징 표현을 학습하는 자기지도(Self-supervised) 및 대조 학습(Contrastive Learning) 접근</p>
+            <p class="topic-name">Multivariate Dependency </p>
+            <p class="topic-desc">다수의 센서 간 관계와 상호 의존성을 효과적으로 반영하여 복잡한 데이터 패턴을 학습하기 위한 방법론 연구</p>
           </div>
         </div>
       </div>
@@ -202,38 +200,37 @@
       <div>
         <p class="area-num">02 / Research Area</p>
         <h2 class="area-title">레이블 품질</h2>
-        <p class="area-sub">Label Quality — Sparsity · Noisy Labels</p>
+        <p class="area-sub">Label Quality</p>
         <p class="area-body">
-          산업 현장에서 전문가가 직접 레이블을 부착하는 작업은 비용과 시간이 막대하게 소요됩니다. 결과적으로 레이블이 희소하거나 오염된(noisy) 상황이 매우 빈번합니다.
-          본 연구팀은 <strong>레이블 희소성</strong> 환경(Semi-supervised Learning)과 <strong>노이즈 레이블</strong> 환경(Learning with Noisy Labels)에서도 강건하게 학습하는 방법론을 연구합니다.
+          산업 현장에서 전문가가 직접 레이블을 할당하는 작업은 비용과 시간이 막대하게 소요됩니다. 결과적으로 레이블이 희소하거나 오염된 상황이 매우 빈번합니다.
+          본 연구팀은 <strong>레이블 희소성</strong> 환경과 <strong>노이즈 레이블</strong> 환경 등에서도 강건하게 학습 가능한 ML/DL 방법론을 연구합니다.
         </p>
         <div class="area-tags" style="margin-bottom:1.5rem;">
-          <span class="tag tag-gold">Noisy Label Learning</span>
-          <span class="tag tag-gold">Semi-supervised Learning</span>
-          <span class="tag tag-gold">Label Scarcity</span>
           <span class="tag tag-gold">Active Learning</span>
+          <span class="tag tag-gold">Semi-supervised Learning</span>
+          <span class="tag tag-gold">Learning with Noisy Labels</span>
         </div>
       </div>
       <div class="area-vis">
         <div class="topic-item">
-          <span class="topic-icon">🏷️</span>
+          <span class="topic-icon">🎯</span>
           <div>
-            <p class="topic-name">Learning with Noisy Labels</p>
-            <p class="topic-desc">레이블 오류가 섞인 학습 데이터에서 클린 샘플을 선별하고, 노이즈에 강건한 손실함수 및 정규화 기법 설계</p>
+            <p class="topic-name">Active Learning</p>
+            <p class="topic-desc">레이블링 비용 최소화를 위해 정보량이 높은 샘플을 선택적으로 레이블링하는 학습 전략 연구</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-icon">🌱</span>
           <div>
             <p class="topic-name">Semi-supervised Learning</p>
-            <p class="topic-desc">소수의 레이블 데이터와 다량의 비레이블 데이터를 함께 활용하는 의사 레이블링(Pseudo-labeling), Consistency Regularization 기법</p>
+            <p class="topic-desc">소수의 레이블 데이터와 다량의 비레이블 데이터를 함께 활용하기 위한 학습 방법론 연구</p>
           </div>
         </div>
         <div class="topic-item">
-          <span class="topic-icon">🎯</span>
+          <span class="topic-icon">🏷️</span>
           <div>
-            <p class="topic-name">Active Learning</p>
-            <p class="topic-desc">레이블링 비용 최소화를 위해 정보량이 높은 샘플을 선택적으로 레이블링하는 능동 학습 전략 연구</p>
+            <p class="topic-name">Learning with Noisy Labels</p>
+            <p class="topic-desc">레이블 오류가 섞인 학습 데이터에서 클린 샘플을 선별하고, 안정적인 학습 성능을 확보하기 위한 방법론 연구</p>
           </div>
         </div>
       </div>
@@ -247,42 +244,38 @@
     <div class="area-block">
       <div>
         <p class="area-num">03 / Research Area</p>
-        <h2 class="area-title">산업응용 — PHM</h2>
-        <p class="area-sub">Prognostics &amp; Health Management</p>
+        <h2 class="area-title">산업 응용 — 건전성예측관리</h2>
+        <p class="area-sub">Industrial Application - Prognostics &amp; Health Management</p>
         <p class="area-body">
-          위 두 가지 핵심 연구를 실제 산업 환경에 적용하는 응용 연구입니다.
-          회전 기계, 공작기계, 배터리, 항공엔진 등 다양한 산업 설비를 대상으로
-          <strong>결함 진단(Fault Diagnosis)</strong>, <strong>잔여 수명 예측(RUL Estimation)</strong>, <strong>이상 탐지(Anomaly Detection)</strong> 문제를 다룹니다.
-          현실의 불완전한 데이터와 희소한 레이블 조건 하에서 실용적인 PHM 솔루션을 제안하는 것이 목표입니다.
+          ML/DL은 제조, 에너지, 의료 등 다양한 산업 분야에 폭넓게 활용되고 있습니다.
+          본 연구팀은 산업 시스템의 상태를 진단하고 미래 건전성을 예측하여 유지보수 의사결정을 지원하는 <strong>건전성예측관리</strong>를 중심으로 다양한 산업 응용 연구를 수행합니다.
         </p>
         <div class="area-tags" style="margin-bottom:1.5rem;">
+          <span class="tag tag-green">Anomaly Detection</span>
           <span class="tag tag-green">Fault Diagnosis</span>
           <span class="tag tag-green">RUL Estimation</span>
-          <span class="tag tag-green">Anomaly Detection</span>
-          <span class="tag tag-green">Bearing / Gearbox</span>
-          <span class="tag tag-green">Battery SoH</span>
         </div>
       </div>
       <div class="area-vis">
         <div class="topic-item">
+          <span class="topic-icon">🔍</span>
+          <div>
+            <p class="topic-name">Anomaly Detection</p>
+            <p class="topic-desc">산업 설비 및 시스템의 정상 패턴으로부터 벗어나는 이상 상태를 조기에 탐지하기 위한 방법론 연구</p>
+          </div>
+        </div>
+        <div class="topic-item">
           <span class="topic-icon">⚙️</span>
           <div>
             <p class="topic-name">Fault Diagnosis</p>
-            <p class="topic-desc">진동·음향·전류 신호 기반 베어링, 기어박스 결함 유형 분류 — 노이즈 레이블 및 도메인 시프트 환경 대응</p>
+            <p class="topic-desc">산업 설비에서 발생한 고장의 원인과 유형을 정확하게 식별하기 위한 방법론 연구</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-icon">📈</span>
           <div>
-            <p class="topic-name">Remaining Useful Life (RUL)</p>
-            <p class="topic-desc">센서 데이터 결측·불규칙 샘플링 조건에서의 설비 잔여 수명 예측 딥러닝 모델 (LSTM, Transformer, Neural ODE)</p>
-          </div>
-        </div>
-        <div class="topic-item">
-          <span class="topic-icon">🔍</span>
-          <div>
-            <p class="topic-name">Anomaly Detection</p>
-            <p class="topic-desc">정상 데이터만 활용하는 비지도/자기지도 학습 기반 산업 이상 탐지 — 불균형 데이터 및 레이블 희소 환경 적용</p>
+            <p class="topic-name">Remaining Useful Life Estimation</p>
+            <p class="topic-desc">산업 설비의 미래 열화 상태를 예측하여 잔여 사용 가능 수명을 추정하기 위한 방법론 연구</p>
           </div>
         </div>
       </div>
@@ -297,7 +290,7 @@
       <div style="margin-bottom:0.9rem;">
         <img src="DS 로고 (하단용_배경제거_크롭).png" alt="IDS Lab" style="height:74px;width:auto;mix-blend-mode:multiply;filter:contrast(1.05);" />
       </div>
-      <p class="footer-tagline">Industrial Data Science Laboratory<br>산업데이터과학 연구실<br>데이터와 레이블 품질 문제를 해결하는 연구를 수행합니다.</p>
+      <p class="footer-tagline">Industrial Data Science Laboratory<br>산업데이터과학 연구실</p>
     </div>
     <div>
       <p class="footer-heading">Location</p>
