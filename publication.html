@@ -66,21 +66,26 @@
     .stat-lbl{font-size:0.75rem;color:var(--text3);margin-top:0.25rem;}
 
     /* PUBLICATION TABLE */
-    .publication-section{padding-top:2rem;}
+    .publication-section{padding-top:2.5rem;}
     .publication-note{font-size:0.86rem;color:var(--text2);margin-bottom:1rem;}
-    .pub-table-wrap{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 12px 32px rgba(15,23,42,0.04);}
+    .publication-heading-wrap{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:1rem;}
+    .publication-kicker{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.35rem;}
+    .publication-heading{font-size:1.35rem;color:var(--text);line-height:1.25;}
+    .publication-caption{font-size:0.82rem;color:var(--text3);text-align:right;}
+    .pub-table-wrap{border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:0 16px 42px rgba(15,23,42,0.08);}
     .pub-table{width:100%;border-collapse:collapse;table-layout:fixed;}
     .pub-table col:nth-child(1){width:72px;}
     .pub-table col:nth-child(2){width:auto;}
     .pub-table col:nth-child(3){width:112px;}
     .pub-table col:nth-child(4){width:180px;}
     .pub-table col:nth-child(5){width:96px;}
-    .pub-table thead{background:var(--bg2);}
-    .pub-table th{padding:0.9rem 1rem;border-bottom:1px solid var(--border);font-size:0.76rem;font-weight:700;color:var(--text2);text-align:center;letter-spacing:0.02em;white-space:nowrap;}
-    .pub-table td{padding:1.05rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle;font-size:0.88rem;color:var(--text2);text-align:center;}
+    .pub-table thead{background:linear-gradient(180deg,#eef4ff 0%,#eaf2ff 100%);}
+    .pub-table th{padding:0.9rem 1rem;border-bottom:1px solid rgba(37,99,235,0.18);font-size:0.76rem;font-weight:700;color:var(--text);text-align:center;letter-spacing:0.02em;white-space:nowrap;}
+    .pub-table td{padding:1.05rem 1rem;border-bottom:1px solid #e8eef7;vertical-align:middle;font-size:0.88rem;color:var(--text2);text-align:center;}
+    .pub-table tbody tr:nth-child(even){background:#fbfdff;}
     .pub-table tbody tr:last-child td{border-bottom:none;}
     .pub-table tbody tr{transition:background var(--transition), box-shadow var(--transition);}
-    .pub-table tbody tr:hover{background:rgba(37,99,235,0.035);box-shadow:inset 3px 0 0 var(--accent);}
+    .pub-table tbody tr:hover{background:rgba(37,99,235,0.05);box-shadow:inset 3px 0 0 var(--accent);}
     .pub-table tbody tr:hover td{color:var(--text);}
     .pub-no{font-family:var(--font-mono);font-size:0.76rem;color:var(--text3);}
     .pub-title-text{display:block;font-size:0.95rem;font-weight:650;line-height:1.55;color:var(--text);letter-spacing:0;text-align:center;}
@@ -113,6 +118,8 @@
 
     @media(max-width:768px){
       .stats-bar{flex-wrap:wrap;gap:1.5rem;}
+      .publication-heading-wrap{display:block;}
+      .publication-caption{text-align:left;margin-top:0.35rem;}
       .footer-inner{grid-template-columns:1fr 1fr;}
       .pub-table col{width:auto !important;}
       .pub-table thead{display:none;}
@@ -159,7 +166,7 @@
   </div>
 </div>
 
-<div style="background:var(--bg);padding:0 0 4rem;">
+<div style="background:var(--bg2);padding:0 0 4.5rem;">
 <div class="container">
 
   <!-- STATS -->
@@ -183,6 +190,14 @@
   </div>
 
   <section class="publication-section">
+    <div class="publication-heading-wrap">
+      <div>
+        <p class="publication-kicker">Journal Publications</p>
+        <h2 class="publication-heading">국제학술지 논문</h2>
+      </div>
+      <p class="publication-caption">Recent publications are listed first.</p>
+    </div>
+
     <div class="pub-table-wrap">
       <table class="pub-table">
         <colgroup>
