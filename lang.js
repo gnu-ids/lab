@@ -182,10 +182,14 @@
     "A.S. 진주 연암공과대학교 전기전자과 (2011.03 ~ 2016.02)":
       "A.S., Electrical and Electronic Engineering, Yeonam Institute of Technology, Jinju (Mar. 2011 - Feb. 2016)",
     "학부연구생": "Undergraduate Researcher",
-    "금 재 훈": "Jaehun Geum",
-    "금재훈": "Jaehun Geum",
-    "경상국립대학교 산업시스템공학부 (2024.03 ~ )":
-      "School of Industrial and Systems Engineering, Gyeongsang National University (Mar. 2024 - )",
+    "손 한 현": "Hanhyeon Son",
+    "손한현": "Hanhyeon Son",
+    "정 병 훈": "Byeonghun Jeong",
+    "정병훈": "Byeonghun Jeong",
+    "경상국립대학교 산업시스템공학부 (2022.03 ~ )":
+      "School of Industrial and Systems Engineering, Gyeongsang National University (Mar. 2022 - )",
+    "경상국립대학교 산업시스템공학부 (2023.03 ~ )":
+      "School of Industrial and Systems Engineering, Gyeongsang National University (Mar. 2023 - )",
 
     /* ── publication.html ── */
     "논문 목록": "Publications",
